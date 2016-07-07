@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			body{
+				background: #fff;
+				color: #000;
+			}
+			table{
+				margin: auto;
+				border: 1px solid #699;
+			}
+			caption{
+				margin: auto;
+				padding: 0.2em;
+				font-size: 1.2em;
+				font-weight: bold;
+			}
+			th{
+				font-weight: bold;
+				font-style: italic;
+				text-align: left;
+				border: 1px dotted #699;
+				background: #9cc;
+				color: #000;
+			}
+			th,td{
+				width: 10em;
+				padding: 0.5em;
+			}
+		</style>
+		<script type="text/javascript" src="js/index.js" ></script>
+		<script>
+//		window.onload=function(){
+//			var table=document.getElementsByTagName("table");
+//			var odd, rows;
+//			for(var i=0;i<table.length;i++){
+//				odd=false;
+//				rows=table[i].getElementsByTagName("tr");
+//				for(var j=0;j<rows.length;j++){
+//					if(odd==true){
+//						rows[j].style.backgroundColor="#ffc";
+//						odd=false;
+//					}else{
+//						odd=true;
+//					}
+//				}
+//			}
+//		}
+			
+			function stripeTables(){
+			var table=document.getElementsByTagName("table");
+			var rows;
+			for(var i=0;i<table.length;i++){
+				rows=table[i].getElementsByTagName("tr");
+				for(var j=0;j<rows.length;j++){
+					if(j%2!==0){
+						rows[j].style.backgroundColor="#ffc";
+					
+					}
+				}
+			}
+		}
+			function highlightRows(){
+				var rows=document.getElementsByTagName("tr");
+				for(var i=0;i<rows.length;i++){
+					rows[i].onmouseover =function(){
+						this.style.fontWeight="bold";
+						this.style.color="blue";
+					}
+					rows[i].onmouseout = function(){
+						this.style.fontWeight="normal"
+						this.style.color="gray";
+					}
+				}
+			}
+			addLoadEvent(stripeTables);
+			addLoadEvent(highlightRows);
+	
+		</script>
+	</head>
+	<body>
+		<table>
+			<caption>itinerary</caption>
+			<thead>
+				<tr>
+					<th>when</th>
+					<th>where</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>june 9th</td>
+					<td>protland,<abbr title="oregon">OR</abbr></td>
+				</tr>
+				<tr>
+					<td>june 10th</td>
+					<td>seattle,<abbr title="washington">WA</abbr></td>
+				</tr>
+				<tr>
+					<td>june 12th</td>
+					<td>sacrmento,<abbr title="california">CA</abbr></td>
+				</tr>
+			</tbody>
+		</table>
+		
+		<table>
+			<caption>itinerary</caption>
+			<thead>
+				<tr>
+					<th>when</th>
+					<th>where</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>june 9th</td>
+					<td>protland,<abbr title="oregon">OR</abbr></td>
+				</tr>
+				<tr>
+					<td>june 10th</td>
+					<td>seattle,<abbr title="washington">WA</abbr></td>
+				</tr>
+				<tr>
+					<td>june 12th</td>
+					<td>sacrmento,<abbr title="california">CA</abbr></td>
+				</tr>
+			</tbody>
+		</table>
+	</body>
+</html>
