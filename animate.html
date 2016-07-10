@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script>
+			function addLoadEvent(func){
+				var oldonload=window.onload;
+				if(typeof window.onload!='function'){
+					window.onload=func;
+				}else{
+					window.onload=function(){
+						oldonload();
+						func();
+					}
+				}
+			}
+			
+			function moveMessage(){
+				var elem=document.getElementById("message");
+				elem.style.left="200px";
+			}
+			function positionMessage(){
+				var elem = document.getElementById("message");
+				elem.style.position="absolute";
+				elem.style.left="50px";
+				elem.style.top="100px"
+				movement=setTimeout("moveMessage()",5000);
+			}
+			addLoadEvent(positionMessage);
+			addLoadEvent(moveMessage);
+   
+		</script>
+	</head>
+	<body>
+		<p id="message">Whee!</p>
+	</body>
+</html>

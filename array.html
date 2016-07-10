@@ -1,0 +1,18 @@
+<script>
+var arr=[1,2,3,4,5,6,7,8,9,0,1,2,3,4,2,5];
+function toObj(arr){
+	var obj={};
+	for(var i=0;i<arr.length;i++){
+		obj[arr[i]]=true;
+	}
+	return obj;
+}
+function toString(obj){
+	var arr=[];
+	for(var attr in obj){
+		arr.push(attr);
+	}
+	return arr;
+}
+alert(toString(toObj(arr)));
+</script>

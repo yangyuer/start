@@ -14,7 +14,7 @@
 				}
 			}
 			function getNextElement(node){
-				if(node.nodeType==1){
+				if(node.nodeType==1){//如果为1则是元素节点，如果为3则是文本节点
 					return node;
 				}
 				if(node.nextSibling){
@@ -23,6 +23,15 @@
 				return null;
 			}
 			window.onload=styleHeaderSiblings;
+//		</script>
+//		<script type="text/javascript" src="js/jquery-1.12.4.min.js" ></script>
+//		<script>
+//			$(function(){
+//				var header=$("h1");
+//				console.log(header.length)
+//				header.next().css("font-size","1.2em")
+//				                    .css("font-weight","bold")
+//			});
 		</script>
 	</head>
 	<body>
